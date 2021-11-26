@@ -13,17 +13,11 @@ inputs:
   tag:
     description: "Image tag"
     required: true
-  build_file:
-    description: "Dockerfile filename"
+  context:
+    description: "build context"
     required: true
   dockerfile:
     description: "Dockerfile filename"
-    required: true
-  github_token:
-    description: "github token"
-    required: true
-  branch:
-    description: "github branch"
     required: true
 runs:
   using: "composite"
@@ -32,10 +26,8 @@ runs:
       shell: bash
       env:
         username: ${{ inputs.username }}
-        build_file: ${{ inputs.build_file }}
         password: ${{ inputs.password }}
         image: ${{ inputs.image }}
         tag: ${{ inputs.tag }}
         dockerfile: ${{ inputs.dockerfile }}
-        github_token: ${{ inputs.github_token }}
-        branch: ${{ inputs.branch }}
+        context: ${{ inputs.context }}
