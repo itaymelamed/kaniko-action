@@ -15,4 +15,4 @@ cat <<EOF >/kaniko/.docker/config.json
 }
 EOF
 
-/kaniko/executor --force --context=git://github.com/FTBpro/mmservices.git#refs/heads/master
+/usr/bin/executor --force --context=git://github.com/FTBpro/mmservices.git#refs/heads/master
