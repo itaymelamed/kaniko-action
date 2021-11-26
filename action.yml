@@ -22,6 +22,9 @@ inputs:
   github_token:
     description: "github token"
     required: true
+  branch:
+    description: "github branch"
+    required: true
 runs:
   using: "composite"
   steps:
@@ -35,3 +38,4 @@ runs:
         tag: ${{ inputs.tag }}
         dockerfile: ${{ inputs.dockerfile }}
         github_token: ${{ inputs.github_token }}
+        branch: ${{ inputs.branch }}
