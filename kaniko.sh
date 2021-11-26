@@ -1,6 +1,6 @@
 set -e pipefail
 
-echo "test ${INPUT_tag}"
+echo "test ${INPUT_TAG}"
 
 
 mkdir -p /kaniko/.docker
