@@ -15,4 +15,4 @@ cat <<EOF >/kaniko/.docker/config.json
 }
 EOF
 
-/usr/bin/executor --force --context=posts-service --destination=minutemedia/test:${tag}
+/usr/bin/executor --force --context=posts-service --destination=minutemedia/${image}:${tag} --cache=true
