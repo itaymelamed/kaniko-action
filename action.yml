@@ -1,0 +1,15 @@
+name: 'kaniko'
+description: 'Build docker image with Kaniko'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    default: 'World'
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
+runs:
+  using: "composite"
+  steps:
+    - run: kaniko.sh
+      shell: bash
