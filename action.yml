@@ -15,9 +15,15 @@ inputs:
     required: true
   build_file:
     description: "Dockerfile filename"
-    required: false
+    required: true
 runs:
   using: "composite"
   steps:
     - run: ${{ github.action_path }}/kaniko.sh
       shell: bash
+      env:
+        username: ${{ inputs.username }}
+        build_file: ${{ inputs.build_file }}
+        password: ${{ inputs.password }}
+        image: ${{ inputs.image }}
+        tag: ${{ inputs.tag }}

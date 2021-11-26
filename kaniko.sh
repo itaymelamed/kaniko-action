@@ -1,6 +1,6 @@
 set -e pipefail
 
-echo "test ${INPUT_TAG}"
+echo "test ${tag}"
 
 
 mkdir -p /kaniko/.docker
@@ -15,4 +15,4 @@ cat <<EOF >/kaniko/.docker/config.json
 }
 EOF
 
-/usr/bin/executor --force --context=${build-file} --destination=minutemedia/${image}:${tag} --cache=true --cache-repo=minutemedia/${image}-cache 
+/usr/bin/executor --force --context=${build_file} --destination=minutemedia/${image}:${tag} --cache=true --cache-repo=minutemedia/${image}-cache 
