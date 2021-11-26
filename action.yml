@@ -19,6 +19,9 @@ inputs:
   dockerfile:
     description: "Dockerfile filename"
     required: true
+  github_token:
+    description: "github token"
+    required: true
 runs:
   using: "composite"
   steps:
@@ -31,3 +34,4 @@ runs:
         image: ${{ inputs.image }}
         tag: ${{ inputs.tag }}
         dockerfile: ${{ inputs.dockerfile }}
+        github_token: ${{ inputs.github_token }}
