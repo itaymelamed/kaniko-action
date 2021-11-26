@@ -7,7 +7,7 @@ mkdir -p /kaniko/.docker
 cat <<EOF >/kaniko/.docker/config.json
 {
     "auths": {
-        "https://${REGISTRY}": {
+        "https://index.docker.io/v1/": {
             "username": "${username}",
             "password": "${password}"
         }
