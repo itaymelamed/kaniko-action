@@ -14,6 +14,7 @@ EOF
 cat /kaniko/.docker/config.json
 
 /usr/bin/executor \
+ --insecure \
  --force \
  --dockerfile=${dockerfile} \
  --context=${context} \
