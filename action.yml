@@ -13,6 +13,9 @@ inputs:
   tag:
     description: "Image tag"
     required: true
+  build_file:
+    description: "Dockerfile filename"
+    required: false
 runs:
   using: "composite"
   steps:
