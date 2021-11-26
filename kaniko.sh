@@ -1,6 +1,7 @@
 set -e pipefail
 
-export COMMIT_SHA=${COMMIT_SHA}
+export COMMIT_SHA=${INPUT_COMMIT_SHA}
+echo ${COMMIT_SHA}
 
 
 mkdir -p /kaniko/.docker
@@ -15,4 +16,4 @@ cat <<EOF >/kaniko/.docker/config.json
 }
 EOF
 
-/usr/bin/executor --force --context=git://github.com/FTBpro/mmservices.git#refs/heads/master --destination=minutemedia/test:tag
+/usr/bin/executor --force --context=posts-service --destination=minutemedia/test:tag
