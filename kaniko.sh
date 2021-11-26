@@ -6,12 +6,11 @@ echo "test ${tag}"
 mkdir -p /kaniko/.docker
 cat <<EOF >/kaniko/.docker/config.json
 {
-    "auths": {
-        "https://index.docker.io/v1/": {
-            "username": "${username}",
-            "password": "${password}"
-        }
-    }
+	"auths": {
+		"https://index.docker.io/v1/": {
+			"auth": "${echo -n ${password}:${username} | base64}"
+		}
+	}
 }
 EOF
 
