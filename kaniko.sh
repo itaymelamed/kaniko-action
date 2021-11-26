@@ -1,7 +1,6 @@
 set -e pipefail
 
-export COMMIT_SHA=${INPUT_COMMIT_SHA}
-echo "test ${COMMIT_SHA}"
+echo "test ${commit}"
 
 
 mkdir -p /kaniko/.docker

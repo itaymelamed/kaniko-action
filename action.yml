@@ -1,7 +1,7 @@
 name: 'minutemedia-kaniko'
 description: 'Build docker image with Kaniko'
 inputs:
-  COMMIT_SHA:
+  commit:
     description: 'github commit sha'
     required: true
 runs:
@@ -9,3 +9,5 @@ runs:
   steps:
     - run: ${{ github.action_path }}/kaniko.sh
       shell: bash
+      env:
+        commit: ${{ inputs.commit }}
