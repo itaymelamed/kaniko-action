@@ -1,6 +1,6 @@
 set -e pipefail
 
-echo "test ${commit}"
+echo "test ${tag}"
 
 
 mkdir -p /kaniko/.docker
@@ -8,11 +8,11 @@ cat <<EOF >/kaniko/.docker/config.json
 {
     "auths": {
         "https://${REGISTRY}": {
-            "username": "${USERNAME}",
-            "password": "${PASSWORD}"
+            "username": "${username}",
+            "password": "${password}"
         }
     }
 }
 EOF
 
-/usr/bin/executor --force --context=posts-service --destination=minutemedia/test:tag
+/usr/bin/executor --force --context=posts-service --destination=minutemedia/test:${tag}
