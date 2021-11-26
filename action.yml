@@ -11,5 +11,5 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: kaniko.sh
+    - run: ${{ github.action_path }}/kaniko.sh
       shell: bash
