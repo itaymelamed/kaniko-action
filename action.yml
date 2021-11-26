@@ -16,6 +16,9 @@ inputs:
   build_file:
     description: "Dockerfile filename"
     required: true
+  dockerfile:
+    description: "Dockerfile filename"
+    required: true
 runs:
   using: "composite"
   steps:
@@ -27,3 +30,4 @@ runs:
         password: ${{ inputs.password }}
         image: ${{ inputs.image }}
         tag: ${{ inputs.tag }}
+        dockerfile: ${{ inputs.dockerfile }}
