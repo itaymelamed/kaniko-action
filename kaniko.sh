@@ -3,19 +3,15 @@ set -e pipefail
 echo "test ${tag}"
 
 
-# mkdir -p /kaniko/.docker
-# echo "creating auth config file"
-# cat <<EOF >/kaniko/.docker/config.json
-# {
-# 	"auths": {
-# 		"https://index.docker.io/v1/": {
-# 			"auth": "${echo -n ${password}:${username} | base64}"
-# 		}
-# 	}
-# }
-# EOF
+mkdir -p /kaniko/.docker
+echo "creating auth config file"
+cat <<EOF >/kaniko/.docker/config.json
+{
+  "insecure-registries" : ["docker-registry.docker-registry:5000"]
+}
+EOF
 
-# cat /kaniko/.docker/config.json
+cat /kaniko/.docker/config.json
 
 /usr/bin/executor \
  --force \
