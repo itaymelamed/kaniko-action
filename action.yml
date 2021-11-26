@@ -1,4 +1,4 @@
-name: 'kaniko'
+name: 'minutemedia-kaniko'
 description: 'Build docker image with Kaniko'
 inputs:
   who-to-greet:  # id of input
