@@ -1,3 +1,4 @@
+mkdir -p /kaniko/.docker
 cat <<EOF >/kaniko/.docker/config.json
 {
     "auths": {
