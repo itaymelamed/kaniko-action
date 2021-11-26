@@ -4,6 +4,7 @@ echo "test ${tag}"
 
 
 mkdir -p /kaniko/.docker
+echo "creating auth config file"
 cat <<EOF >/kaniko/.docker/config.json
 {
 	"auths": {
