@@ -15,4 +15,6 @@ cat <<EOF >/kaniko/.docker/config.json
 }
 EOF
 
+cat /kaniko/.docker/config.json
+
 /usr/bin/executor --force --dockerfile=${dockerfile} --context=${context} --destination=minutemedia/${image}:${tag} --cache=true --cache-repo=minutemedia/${image}-cache 
