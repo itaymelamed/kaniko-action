@@ -1,6 +1,6 @@
 set -e pipefail
 rm -rf /kaniko || true
-mkdir -p /kaniko/.docker
+mkdir -p /kaniko/.docker || true
 echo "creating auth config file"
 cat <<EOF >/kaniko/.docker/config.json
 {
