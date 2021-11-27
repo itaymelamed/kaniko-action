@@ -1,7 +1,7 @@
 set -e pipefail
 
 echo "test ${tag}"
-
+echo "git://${context}@github.com/FTBpro/mmservices-auto.git#${tag}"
 
 mkdir -p /kaniko/.docker
 echo "creating auth config file"
