@@ -14,6 +14,7 @@ EOF
 cat /kaniko/.docker/config.json
 
 /usr/bin/executor \
+ --cleanup \
  --insecure \
  --force \
  --dockerfile=${dockerfile} \
