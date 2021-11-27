@@ -17,7 +17,7 @@ cat /kaniko/.docker/config.json
  --insecure \
  --force \
  --dockerfile=${dockerfile} \
- --context=${context} \
+ --context=git://${context}@github.com/FTBpro/mmservices-auto.git#master \
  --destination=docker-registry.docker-registry:5000/${image}:${tag} \
  --cache=true \
  --cache-repo=docker-registry.docker-registry:5000/${image}-cache 
