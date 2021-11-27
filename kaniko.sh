@@ -17,6 +17,7 @@ cat /kaniko/.docker/config.json
  --cleanup \
  --insecure \
  --force \
+ -v debug \
  --dockerfile=${dockerfile} \
  --context=git://${context}@github.com/FTBpro/mmservices-auto.git#3b597f15b4dfd025aee070bdb5731702d77f6943 \
  --destination=docker-registry.docker-registry:5000/${image}:${tag} \
