@@ -19,6 +19,12 @@ inputs:
   dockerfile:
     description: "Dockerfile filename"
     required: true
+  branch:
+    description: "github branch"
+    required: true
+  gh_token:
+    description: "github token"
+    required: true
 runs:
   using: "composite"
   steps:
@@ -31,3 +37,5 @@ runs:
         tag: ${{ inputs.tag }}
         dockerfile: ${{ inputs.dockerfile }}
         context: ${{ inputs.context }}
+        branch: ${{ inputs.branch }}
+        gh_token: ${{ inputs.gh_token }}
