@@ -12,7 +12,6 @@ EOF
  --cleanup \
  --insecure \
  --force \
- --use-new-run \
  --dockerfile=${dockerfile} \
  --context=git://${gh_token}@github.com/FTBpro/mmservices-auto.git \
  --destination=docker-registry.docker-registry:5000/${image}:${tag} \
